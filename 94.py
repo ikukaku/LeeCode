@@ -25,11 +25,14 @@
 
 import json
 # Definition for a binary tree node.
+
+
 class TreeNode(object):
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
+
 
 class Solution(object):
     def inorderTraversal(self, root):
@@ -38,6 +41,7 @@ class Solution(object):
         :rtype: List[int]
         """
         return exec_main(root)
+
 
 def exec_main(root):
     result = []
@@ -50,7 +54,6 @@ def exec_main(root):
         for i in right_result:
             result.append(i)
     return result
-
 
 
 def stringToTreeNode(input):
@@ -94,16 +97,10 @@ def integerListToString(nums, len_of_list=None):
 
 
 def main():
-    import sys
-    def readlines():
-        for line in sys.stdin:
-            yield line.strip('\n')
-
-    lines = readlines()
     while True:
         try:
             line = raw_input().strip()
-            root = stringToTreeNode(line)
+            root = stringToTreeNode(line)  # 将题目中的输入样例初始化为TreeNode结构
 
             ret = Solution().inorderTraversal(root)
 
